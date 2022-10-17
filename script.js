@@ -1,3 +1,4 @@
+const header = document.getElementById('header')
 let playerWins = 0
 let computerWins = 0
 
@@ -14,28 +15,25 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === 'scissors' && computerSelection === 'rock')
   ) {
     ++computerWins
-    return `You Lose! ${computerSelection} beats ${playerSelection}`
+    console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
   } else if (
     (playerSelection === 'paper' && computerSelection === 'rock') ||
     (playerSelection === 'scissors' && computerSelection === 'paper') ||
     (playerSelection === 'rock' && computerSelection === 'scissors')
   ) {
     ++playerWins
-    return `You Win! ${playerSelection} beats ${computerSelection}`
+    console.log(`You Win! ${playerSelection} beats ${computerSelection}`)
   } else {
-    return `play again`
+    console.log(`play again`)
   }
 }
 
-const playerSelection = window.prompt('paper, rock or scissors').toLowerCase()
-
-const computerSelection = computerPlay()
-
-// const play = playRound(playerSelection, computerSelection)
-
 function game() {
   for (let i = 0; i < 5; i++) {
-    playRound(playerSelection, computerSelection)
+    const playerSelection = window
+      .prompt('paper, rock or scissors')
+      .toLowerCase()
+    playRound(playerSelection, computerPlay())
   }
   console.log(playerWins, computerWins)
 
@@ -48,4 +46,9 @@ function game() {
   }
 }
 
-console.log(game())
+const text = game()
+const node = document.createTextNode(text)
+
+console.log(text)
+
+header.appendChild(node)
