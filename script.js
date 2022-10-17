@@ -29,7 +29,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  for (let i = 0; i < 5; i++) {
+  const rounds = window.prompt('How many rounds do you want to play?')
+  const parsed = parseInt(rounds)
+  for (let i = 0; i < parsed; i++) {
     const playerSelection = window.prompt('paper, rock or scissors').toLowerCase()
     playRound(playerSelection, computerPlay())
   }
