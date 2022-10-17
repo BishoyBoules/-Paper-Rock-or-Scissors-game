@@ -35,7 +35,7 @@ function game() {
     if(!gameArray.includes(playerSelection)){
       alert('wrong entry')
       i--
-      continue;
+      continue
     }
     playRound(playerSelection, computerPlay())
   }
