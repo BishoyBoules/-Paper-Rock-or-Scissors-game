@@ -1,4 +1,3 @@
-const header = document.getElementById('header')
 let playerWins = 0
 let computerWins = 0
 const gameArray = ['rock', 'paper', 'scissors']
@@ -50,10 +49,8 @@ function game() {
   }
 }
 
-const text = game()
-const node = document.createTextNode(text)
-header.appendChild(node)
+alert(game())
 
-console.log(text)
+console.log(game())
 
 
