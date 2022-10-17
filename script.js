@@ -1,9 +1,9 @@
 const header = document.getElementById('header')
 let playerWins = 0
 let computerWins = 0
+const gameArray = ['rock', 'paper', 'scissors']
 
 function computerPlay() {
-  const gameArray = ['rock', 'paper', 'scissors']
   const randomValue = Math.floor(Math.random() * gameArray.length)
   return gameArray[randomValue]
 }
@@ -33,6 +33,10 @@ function game() {
   const parsed = parseInt(rounds)
   for (let i = 0; i < parsed; i++) {
     const playerSelection = window.prompt('paper, rock or scissors').toLowerCase()
+    if(!gameArray.includes(playerSelection)){
+      alert('wrong entry')
+      i--
+    }
     playRound(playerSelection, computerPlay())
   }
   console.log(playerWins, computerWins)
