@@ -30,9 +30,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const playerSelection = window
-      .prompt('paper, rock or scissors')
-      .toLowerCase()
+    const playerSelection = window.prompt('paper, rock or scissors').toLowerCase()
     playRound(playerSelection, computerPlay())
   }
   console.log(playerWins, computerWins)
@@ -48,7 +46,8 @@ function game() {
 
 const text = game()
 const node = document.createTextNode(text)
+header.appendChild(node)
 
 console.log(text)
 
-header.appendChild(node)
+
